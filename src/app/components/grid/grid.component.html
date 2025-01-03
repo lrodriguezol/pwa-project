@@ -1,0 +1,19 @@
+<mat-table [dataSource]="cats">
+    <ng-container matColumnDef="catId">
+        <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+        <mat-cell *matCellDef="let cat">{{ cat.id }}</mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef>NAME</mat-header-cell>
+        <mat-cell *matCellDef="let cat">{{ cat.name }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="origin">
+        <mat-header-cell *matHeaderCellDef>ORIGIN</mat-header-cell>
+        <mat-cell *matCellDef="let cat">{{ cat.origin }}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columns" [routerLink]="['/cat', row.id]"></mat-row>
+</mat-table>

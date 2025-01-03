@@ -1,0 +1,10 @@
+mat-row {
+    cursor: pointer;
+}
+mat-row:hover {
+    background-color: #e0e0e0 !important;
+}
+
+mat-header-cell{
+    font-weight: bold;
+}

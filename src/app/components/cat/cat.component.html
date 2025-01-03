@@ -1,0 +1,17 @@
+<div class="container" *ngIf="cat">
+    <div class="back-button"><button mat-raised-button routerLink="/">Back</button>   </div>
+    <div class="details"> <h1>Cat Name: {{ cat.name }}</h1>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header><mat-panel-title>Show All Details</mat-panel-title></mat-expansion-panel-header>
+            <div>
+                <div class="info-container">
+                    <p><strong>Id:</strong> {{ cat.id }}</p>
+                    <p><strong>Origin:</strong> {{ cat.origin }}</p>
+                    <p><strong>Temperament:</strong> {{ cat.temperament }}</p>
+                    <p><strong>Description:</strong> {{ cat.description }}</p>
+                    <p><strong>Life Span:</strong> {{ cat.life_span }}</p>
+                </div>
+            </div>
+        </mat-expansion-panel>
+    </div>       
+</div>

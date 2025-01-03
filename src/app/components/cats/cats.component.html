@@ -1,0 +1,26 @@
+<div class="container">
+    <h1>CATS</h1>
+    <mat-spinner *ngIf="loading"></mat-spinner>
+    <div class="view-buttons">
+        <mat-button-toggle-group [value]="currentView">
+            <mat-button-toggle value="table" (click)="changeView('table')">
+                <mat-icon>view_list</mat-icon>
+            </mat-button-toggle>
+            <mat-button-toggle value="cards" (click)="changeView('cards')">
+                <mat-icon>view_module</mat-icon>
+            </mat-button-toggle>
+        </mat-button-toggle-group>
+    </div>
+    <div [@fadeInOut]>
+        <div *ngIf="currentView === 'table'">
+            <ng-container>
+                <app-grid [cats]="cats"></app-grid>
+            </ng-container>
+        </div>
+        <div *ngIf="currentView === 'cards'">
+            <ng-container *ngFor="let cat of cats">
+                <app-card [item]="cat"></app-card>
+            </ng-container>
+        </div>
+    </div>
+</div>
